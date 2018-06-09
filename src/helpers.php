@@ -32,6 +32,6 @@ if (! function_exists('asset')) {
             $protocol = 'http';
         }
 
-        return "$protocol://{$_SERVER['HTTP_HOST']}/public/$file";
+        return "$protocol://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}public/$file";
     }
 }
