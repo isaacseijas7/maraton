@@ -30,9 +30,26 @@ class Router
         return $this->callController();
     }
 
+    public function request_path()
+    {
+        $request_uri = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
+        $script_name = explode('/', trim($_SERVER['SCRIPT_NAME'], '/'));
+        $parts = array_diff_assoc($request_uri, $script_name);
+        if (empty($parts))
+        {
+            return '/';
+        }
+        $path = implode('/', $parts);
+        if (($position = strpos($path, '?')) !== FALSE)
+        {
+            $path = substr($path, 0, $position);
+        }
+        return '/'.$path;
+    }
+
     private function checkUrlAndMethod()
     {
-        return $_SERVER['REQUEST_METHOD'] != $this->type || $_SERVER['REQUEST_URI'] != $this->url;
+        return $_SERVER['REQUEST_METHOD'] != $this->type || $this->request_path() != $this->url;
     }
 
     protected function callController()

@@ -17,4 +17,9 @@ class HomeController
 
         return view('index', ['user' => $user]);
     }
+
+    public function user($user)
+    {
+        dd($user);
+    }
 }

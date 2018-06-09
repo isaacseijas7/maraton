@@ -8,7 +8,7 @@ $container = Container::getInstance();
 App\Core\Facade::setContainer($container);
 
 $container->bind('router', function () {
-    return new Router(['hola' => 'mundo']);
+    return new Router();
 });
 
 require $folderRoot.'routes.php';
