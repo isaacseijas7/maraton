@@ -4,7 +4,7 @@ $namespaceRoot = 'App\\';
 $folderRoot = 'src/';
 
 spl_autoload_register(function ($class) use ($namespaceRoot, $folderRoot) {
-    $class = st_replace($namespaceRoot, '', $class);
+    $class = str_replace($namespaceRoot, '', $class);
 
     $path = $folderRoot . str_replace('\\', '/', $class) . '.php';
     //src/Container
