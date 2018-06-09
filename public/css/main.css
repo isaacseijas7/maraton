@@ -1,0 +1,132 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html, body{
+	font-size: 16px;
+	font-family: sans-serif;
+}
+
+.example {
+	background-color: #eee;
+	padding: 5px;
+	margin: 2px 0;
+}
+
+hr {
+	margin: 5px 0;
+}
+
+/* ----------------- GRIBS ----------------- */
+
+.row {
+	width: 100%;
+}
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5 {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.col-1 {
+    width: 19%;
+}
+
+.col-2 {
+    width: 39%;
+}
+
+.col-3 {
+    width: 59%;
+}
+
+.col-4 {
+    width: 79%;
+}
+
+.col-5 {
+    width: 100%;;
+}
+
+@media screen and (min-width: 35.5em) {
+	
+	.example {
+		background-color: red;
+	}
+
+	.col-1 {
+	    width: 19.4%;
+	}
+
+	.col-2 {
+	    width: 39.4%;
+	}
+
+	.col-3 {
+	    width: 59.4%;
+	}
+
+	.col-4 {
+	    width: 79.4%;
+	}
+
+}
+
+@media screen and (min-width: 48em) {
+	.example {
+		background-color: blue;
+	}
+
+	.col-1 {
+	    width: 19.5%;
+	}
+
+	.col-2 {
+	    width: 39.5%;
+	}
+
+	.col-3 {
+	    width: 59.5%;
+	}
+
+	.col-4 {
+	    width: 79.5%;
+	}
+
+}
+
+@media screen and (min-width: 64em) {
+	.example {
+		background-color: green;
+	}
+
+	.col-1 {
+	    width: 19.7%;
+	}
+
+	.col-2 {
+	    width: 39.7%;
+	}
+
+	.col-3 {
+	    width: 59.7%;
+	}
+
+	.col-4 {
+	    width: 79.7%;
+	}
+
+}
+
+@media screen and (min-width: 80em) {
+	.example {
+		background-color: yellow;
+	}
+}
+
+/* ----------------- GRIBS ----------------- */
