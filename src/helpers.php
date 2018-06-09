@@ -26,10 +26,12 @@ if (! function_exists('view')) {
 if (! function_exists('asset')) {
     function asset($file)
     {
-        $request_uri = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
-        $script_name = explode('/', trim($_SERVER['SCRIPT_NAME'], '/'));
-        $parts = array_diff_assoc($request_uri, $script_name);
+        if (isset($_SERVER['https'])) {
+            $protocol = 'https';
+        } else {
+            $protocol = 'http';
+        }
 
-        return "../public/$file";
+        return "$protocol://{$_SERVER['HTTP_HOST']}/public/$file";
     }
 }
